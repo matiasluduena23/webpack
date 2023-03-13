@@ -1,0 +1,103 @@
+
+#navbar{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ 
+  color: black;
+  height: 60px;
+  width: 100%;
+  padding: 0 100px;
+
+  @supports(backdrop-filter: blur(0.3rem)){
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(0.5rem);
+  }
+  #toggle-nav{
+    display: none;
+
+  }
+
+  .list-nav ul{
+    display: flex;
+
+    li{
+      list-style: none; 
+
+        a{
+          display: block;
+          text-decoration: none;
+          margin: 0 1.5rem;
+          color: white;
+          transition: 0.4s all ease-in-out;
+          padding: 10px 10px;
+          border-radius: 15px;
+          }
+
+        a:hover{
+          background: white;
+          color: black;
+        }
+
+      } 
+  }
+}
+
+
+@media only screen and (max-width:900px) {
+  #navbar > #toggle-nav{
+    display: block;
+    cursor: pointer;
+
+    .line{
+      height: 2px;
+      width: 30px;
+      background: rgb(172, 64, 64);
+      margin: 6px 0;
+    }
+  }
+
+ 
+  .list-nav{
+    height: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: hsl(0 0% 0% / 0.30);
+    // backdrop-filter: blur(1rem);
+    transition: 0.5s;
+    overflow: hidden;
+
+   
+    ul {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: fit-content;
+      margin: 80px auto 0 auto;
+      transition: 0.5s;
+      opacity: 0;
+      
+
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+ 
+  //active toggle button
+  .list-nav.active{
+    height: 400px;
+    overflow: visible;
+  }
+  
+  .list-nav.active ul{
+    opacity: 1;
+  }
+
+
+}

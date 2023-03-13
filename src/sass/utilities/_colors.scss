@@ -1,0 +1,72 @@
+
+
+// create colors class with loops
+@each $key, $val in $colors {
+  .text-#{$key}{
+    color: $val
+  }
+
+  .text-hover-#{$key} {
+    &:hover{
+    color: $val
+    }
+  }
+
+  .bg-#{$key}{
+    background-color: $val;
+  }
+
+  .bg-hover-#{$key} {
+    &:hover{
+    background-color: $val;
+    }
+  }
+
+  @if($val != hsl(0, 0%, 100%) and $val != hsl(0, 0%, 0%) ) {
+    //light variations text
+    @for $i from 1 through 9 {
+      .text-#{$key}-light-#{$i} {
+        color: mix(hsl(0, 0%, 100%), $val, $i * 10%);
+      }
+      //Hover text light variations
+      .text-hover-#{$key}-light-#{$i} {
+        &:hover{
+        color: mix(hsl(0, 0%, 100%), $val, $i * 10%);
+        }
+      }
+      //light variations bg
+      .bg-#{$key}-light-#{$i}{
+        background-color: mix(hsl(0, 0%, 100%), $val, $i * 10%);
+      }
+      //hover background light variations bg
+      .bg-hover-#{$key}-light-#{$i} {
+        &:hover{
+        background-color: mix(hsl(0, 0%, 100%), $val, $i * 10%);
+        }
+      }
+    }
+
+    //dark variations
+    @for $i from 1 through 9 {
+      .text-#{$key}-dark-#{$i}{
+        color: mix(hsl(0, 0%, 0%), $val, $i * 10%);
+      }
+
+      .text-hover-#{$key}-dark-#{$i} {
+        &:hover{
+        color: mix(hsl(0, 0%, 0%), $val, $i * 10%);
+        }
+      }
+
+      .bg-#{$key}-dark-#{$i}{
+        background-color: mix(hsl(0, 0%, 0%), $val, $i * 10%);
+      }
+
+      .bg-hover-#{$key}-dark-#{$i} {
+        &:hover{
+        background-color: mix(hsl(0, 0%, 0%), $val, $i * 10%);
+        }
+      }
+    }
+  }
+}

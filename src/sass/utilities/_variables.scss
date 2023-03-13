@@ -1,0 +1,36 @@
+//theme colors
+$primary: hsl(240, 95%, 42%);
+$secondary: hsl(120, 95%, 31%);
+$danger: hsl(0, 96%, 46%);
+$info: hsl(60, 73%, 46%);
+
+//palette colors
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "error": $danger,
+  "info": $info,
+  "purple": hsl(300, 95%, 32%),
+  "gray": hsl(0, 0%, 42%),
+  "black": hsl(0, 0%, 0%),
+  "white": hsl(0, 0%, 100%),
+);
+
+
+//spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+//border
+$base-border-thinckness: 1px;
+$base-border-radius: 20px;
+
+//box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+
+//font sizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
